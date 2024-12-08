@@ -1,0 +1,19 @@
+.freckle-face-regular {
+  font-family: "Freckle Face", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../img/background.svg");
+
+  /* Set a specific height */
+  min-height: 85vh; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
