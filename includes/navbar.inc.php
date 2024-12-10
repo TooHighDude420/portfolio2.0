@@ -10,13 +10,13 @@ $pages = ['home', 'programs', 'games', 'contact'];
             if ($page == $pages[$i]) {
                 print "<a href='index.php?page=$pages[$i]' class='text-sm text-gray-500 dark:text-blue-500 hover:underline'>";
                 print "<button type='button' class='p-2 bg-[#767676] rounded-lg border-4 border-black hover:bg-[#767676] dark:bg-[#767676] dark:border-black dark:hover:bg-[#767676]'>";
-                print "<img src='img/$pages[$i].svg' class='size-15'>";
+                print "<img src='img/navbar/$pages[$i].svg' class='size-15'>";
                 print "</button>";
                 print "</a>";
             } else {
                 print "<a href='index.php?page=$pages[$i]' class='text-sm text-gray-500 dark:text-blue-500 hover:underline'>";
                 print "<button type='button' class='p-2 hover:bg-[#767676] rounded-lg border-4 border-[#1F2A21] hover:border-black hover:bg-[#767676] dark:border-[#1F2A21] dark:hover:bg-[#767676] dark:hover:border-black dark:hover:bg-[#767676]'>";
-                print "<img src='img/$pages[$i].svg' class='size-15'>";
+                print "<img src='img/navbar/$pages[$i].svg' class='size-15'>";
                 print "</button>";
                 print "</a>";
             }
