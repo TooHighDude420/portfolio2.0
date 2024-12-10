@@ -6,7 +6,7 @@
 
 .parallax {
   /* The image used */
-  background-image: url("../img/background.svg");
+  background-image: url("../img/home/background.svg");
 
   /* Set a specific height */
   min-height: 85vh; 
@@ -16,8 +16,4 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.path{
-  stroke-dasharray: 20;
 }

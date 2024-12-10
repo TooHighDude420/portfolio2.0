@@ -24,7 +24,7 @@ $pages = ['home', 'programs', 'games', 'contact'];
         ?>
         <a href="https://github.com/TooHighDude420" class="text-sm text-gray-500 dark:text-blue-500 hover:underline">
             <button type="button" class="size-15">
-                <img src="img/discord.svg">
+                <img src="img/navbar/discord.svg">
             </button>
         </a>
     </div>
