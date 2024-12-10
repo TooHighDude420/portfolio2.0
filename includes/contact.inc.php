@@ -5,8 +5,7 @@
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <!-- Modal header -->
-            <div
-                class="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <div class="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h1 class="text-white">Laat een bricht achter</h1>
             </div>
             <!-- Modal body -->
