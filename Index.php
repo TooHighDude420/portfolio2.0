@@ -18,11 +18,11 @@
     <header class="w-[6%] z-10 sticky top-0">
         <?php include "includes/navbar.inc.php" ?>
     </header>
-    <main>
+    <main class="flex flex-col justify-around h-[200vh]">
         <?php include "includes/home.inc.php" ?>
         <?php include "includes/programs.inc.php" ?>
         <?php include "includes/contact.inc.php" ?>
     </main>
 </body>
-
+ 
 </html>

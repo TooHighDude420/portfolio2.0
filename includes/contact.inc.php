@@ -5,7 +5,7 @@
         <div class="text-white">
             <h1> Contact </h1>
         </div>
-        <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <div class="relative p-5 w-full max-w-2xl max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <!-- Modal header -->
