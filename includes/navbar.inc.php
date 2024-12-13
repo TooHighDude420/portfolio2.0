@@ -1,6 +1,6 @@
 <?php
 isset($_GET['page']) ? $page = $_GET['page'] : $page = "home";
-$pages = ['home', 'programs', 'games', 'contact'];
+$pages = ['home', 'programs', 'contact'];
 ?>
 
 <nav class="bg-[#1F2A21] border-gray-200 dark:bg-[#1F2A21]-900 h-[100vh]">

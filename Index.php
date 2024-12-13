@@ -19,7 +19,9 @@
         <?php include "includes/navbar.inc.php" ?>
     </header>
     <main>
-        <?php include "includes/$page.inc.php" ?>
+        <?php include "includes/home.inc.php" ?>
+        <?php include "includes/programs.inc.php" ?>
+        <?php include "includes/contact.inc.php" ?>
     </main>
 </body>
 
