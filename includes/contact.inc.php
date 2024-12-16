@@ -14,9 +14,9 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 md:p-5 space-y-4">
-                    <form class="max-w-md mx-auto">
+                    <form class="max-w-md mx-auto" method="POST" action="php/add-to-cont.php">
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="email" name="floating_email" id="floating_email"
+                            <input type="email" name="e_mail" id="floating_email"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" " required >
                             <label for="floating_email"
@@ -25,7 +25,7 @@
                         </div>
                         <div class="grid md:grid-cols-2 md:gap-6">
                             <div class="relative z-0 w-full mb-5 group">
-                                <input type="text" name="floating_first_name" id="floating_first_name"
+                                <input type="text" name="f_name" id="floating_first_name"
                                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" " required >
                                 <label for="floating_first_name"
@@ -33,7 +33,7 @@
                                     name</label>
                             </div>
                             <div class="relative z-0 w-full mb-5 group">
-                                <input type="text" name="floating_last_name" id="floating_last_name"
+                                <input type="text" name="l_name" id="floating_last_name"
                                     class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" " required >
                                 <label for="floating_last_name"
@@ -46,7 +46,7 @@
                                 <label for="message"
                                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                                     message</label>
-                                <textarea id="message" rows="4"
+                                <textarea name="message" id="message" rows="4"
                                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     placeholder="Write your thoughts here..."></textarea>
                             </div>
