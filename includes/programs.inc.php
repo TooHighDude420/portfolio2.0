@@ -1,11 +1,12 @@
 <section>
-    <div class="relative flex-col justify-center items-center flex">
+<script src="js/myWork.js"></script>
+    <div onload="startCarrousel()" class="relative flex-col justify-center items-center flex" id="cardContainer">
         <div class="titles ubuntu-regular">
             <h1> Mijn werk </h1>
         </div>
         <div class="flex justify-center items-center p-5 gap-10">
             <div
-                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                class="big-card dark:bg-gray-800 dark:border-gray-700">
                 <img src="" alt="" class="w-[100%] h-[20vh] rounded-lg">
                 <a href="#">
                     <h5 class="small-titles ubuntu-regular">Mastermind</h5>
@@ -22,7 +23,7 @@
                 </a>
             </div>
             <div
-                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                class="small-card dark:bg-gray-800 dark:border-gray-700">
                 <img src="" alt="" class="w-[100%] h-[20vh] rounded-lg">
                 <a href="#">
                     <h5 class="small-titles ubuntu-regular">Mastermind</h5>
@@ -39,7 +40,7 @@
                 </a>
             </div>
             <div
-                class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                class="small-card dark:bg-gray-800 dark:border-gray-700">
                 <img src="" alt="" class="w-[100%] h-[20vh] rounded-lg">
                 <a href="#">
                     <h5 class="small-titles ubuntu-regular">Mastermind</h5>
@@ -55,6 +56,8 @@
                     </svg>
                 </a>
             </div>
+            <button onclick="carUp()"> up! </button>
+            <button onclick="carDown()"> down! </button>
         </div>
     </div>
 </section>
