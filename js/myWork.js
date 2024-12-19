@@ -1,4 +1,3 @@
-var container;
 var testArray = [
     [
         "hallo",
@@ -11,7 +10,7 @@ var testArray = [
         "test omschrijving2",
         "img/cool.png2"
     ],
-    
+
     [
         "hallo3",
         "test omschrijving3",
@@ -36,21 +35,38 @@ var testArray = [
         "img/cool.png6"
     ]
 ];
-var car;
 
-function startCarrousel(){
-    const cardContainer = document.getElementById("cardContainer");
-    container = cardContainer.children[1];
-    car = new Carrousel(testArray, container);
+var destruct;
+
+var cashedCards = []; // hoef niet elke keer identieke kaarten te maken
+// methode: je hebt 3 kaarten om mee te beginnen dus ook 1,2,3 en dan als je op de + knop drukt moet er nieuwe kaart 
+// gemaakt worden die de vorrige vervangt en dan de laatste kaart moet verwijdert en gecashed worden
+
+var activeCards = [];
+
+const cardContainer = document.getElementById("cardContainer");
+
+var carro = new Carrousel(testArray, cardContainer);
+
+// cashing the cards
+for (var i = 0; i < carro.cardList.length; i++){
+    cashedCards[i] = carro.cardList[i];
+    console.log(carro.cardList[i].refId);
 }
 
-function carUp(){
-    car.setGroup('+');
+for (var ii = 0; ii < 3; ii++){
+    carro.cardList[ii].createCard(cardContainer, ii);
+    activeCards.push([carro.cardList[ii], carro.cardList[ii].refId])
 }
 
-function carDown(){
-    car.setGroup('-');
+cashedCards[3].createCard(cardContainer, cashedCards.refId);
+
+function carUp() {
+    destruct =  activeCards[0][0];
+    destruct.destroyCard();
+    activeCards.pop();
 }
 
-
-
+function carDown() {
+    carro.setGroup('-');
+}

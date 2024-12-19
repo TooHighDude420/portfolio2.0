@@ -1,49 +1,58 @@
-class Carrousel{
-    data; container; left; leftIndex; center; centerIndex; right; rightIndex;  
-    
-    constructor(data, container){
-        this.container = container;
+class Carrousel {
+    data;
+    container;
+    left;
+    leftIndex;
+    center;
+    centerIndex;
+    right;
+    rightIndex;
+    cardList = [];
+
+    constructor(data) {
         this.data = data;
-        for (i = 0; i < data.size(); i++){
-            if (this.left == null){
-                this.left = data[i];
-                this.leftIndex = i;
-            } else if (this.center == null){
-                this.center = data[i];
-                this.centerIndex = i;
-            } else if (this.right == null){
-                this.right = data[i]
-                this.rightIndex = i;
-            } else {
-                break;
-            }
+        
+        for (var i = 0; i < data.length; i++) {
+            this.cardList.push(new Card(data[i][0], data[i][1], i));
         }
     }
 
-    getLeft(){
+    getLeft() {
         return this.left;
     }
 
-    getCentre(){
+    setLeft(val) {
+        this.left = val;
+    }
+
+    getCenter() {
         return this.center;
     }
 
-    getRight(){
+    setCenter(val) {
+        this.center = val;
+    }
+
+    getRight() {
         return this.right;
     }
 
-    setGroup(c){
-        if (c == '+'){
+    setRight(val) {
+        this.right = val;
+    }
+
+    setGroup(c) {
+        if (c == '+') {
             this.leftIndex++;
             this.centerIndex++;
             this.rightIndex++;
-        } else if (c == '-'){
+        } else if (c == '-') {
             this.leftIndex--;
             this.centerIndex--;
             this.rightIndex--;
         }
-        this.left = data[this.leftIndex];
-        this.center = data[this.centerIndex];
-        this.right = data[this.rightIndex];
+        this.left = this.data[this.leftIndex];
+        this.center = this.data[this.centerIndex];
+        this.right = this.data[this.rightIndex];
     }
 }
