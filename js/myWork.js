@@ -9,7 +9,6 @@ xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         testArray = this.response;
         testArray = JSON.parse(testArray);
-        console.log(testArray);
         go();
     }
 };
@@ -22,7 +21,6 @@ function go() {
 
     leftCard[0].textContent = carro.getActiveCards()[0].title;
     leftCard[1].textContent = carro.getActiveCards()[0].disc;
-    leftCard[2].src = "http://localhost/portfolio2.0/" + carro.getActiveCards()[0].img
 
     centerCard[0].textContent = carro.getActiveCards()[1].title;
     centerCard[1].textContent = carro.getActiveCards()[1].disc;
