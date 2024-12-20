@@ -6,7 +6,7 @@ class Carroussel{
 	
 	constructor(data, size) {
 		for (var i = 0; i < data.length; i++) {
-			this.cardList.push(new Card(data[i][0], data[i][1], data[i][2], i));
+			this.cardList.push(new Card(data[i].title, data[i].description, data[i].img_path, i));
 		}
 		
 		this.size = size;
@@ -15,8 +15,8 @@ class Carroussel{
 		for (var i = 0; i < size; i++) {
 			this.activeCards[i] = this.cardList.at(i);
 			this.index++;
-		}
-	}
+		}        
+    }
 	
 	getActiveCards() {
 		return this.activeCards;
