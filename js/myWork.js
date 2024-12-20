@@ -36,37 +36,52 @@ var testArray = [
     ]
 ];
 
-var destruct;
+carro = new Carroussel(testArray, 3);
 
-var cashedCards = []; // hoef niet elke keer identieke kaarten te maken
-// methode: je hebt 3 kaarten om mee te beginnen dus ook 1,2,3 en dan als je op de + knop drukt moet er nieuwe kaart 
-// gemaakt worden die de vorrige vervangt en dan de laatste kaart moet verwijdert en gecashed worden
+const leftCard = [
+    document.getElementById("leftTitle"),
+    document.getElementById("leftSubtext")
+];
 
-var activeCards = [];
+const centerCard = [
+    document.getElementById("centerTitle"),
+    document.getElementById("centerSubtext")
+];
 
-const cardContainer = document.getElementById("cardContainer");
+const rightCard = [
+    document.getElementById("rightTitle"),
+    document.getElementById("rightSubtext")
+];
 
-var carro = new Carrousel(testArray, cardContainer);
+leftCard[0].textContent = carro.getActiveCards()[0].title;
+leftCard[1].textContent = carro.getActiveCards()[0].disc;
 
-// cashing the cards
-for (var i = 0; i < carro.cardList.length; i++){
-    cashedCards[i] = carro.cardList[i];
-    console.log(carro.cardList[i].refId);
+centerCard[0].textContent = carro.getActiveCards()[1].title;
+centerCard[1].textContent = carro.getActiveCards()[1].disc;
+
+rightCard[0].textContent = carro.getActiveCards()[2].title;
+rightCard[1].textContent = carro.getActiveCards()[2].disc;
+
+function nextCard() {
+    carro.nextCard();
+    leftCard[0].textContent = carro.getActiveCards()[0].title;
+    leftCard[1].textContent = carro.getActiveCards()[0].disc;
+
+    centerCard[0].textContent = carro.getActiveCards()[1].title;
+    centerCard[1].textContent = carro.getActiveCards()[1].disc;
+
+    rightCard[0].textContent = carro.getActiveCards()[2].title;
+    rightCard[1].textContent = carro.getActiveCards()[2].disc;
 }
 
-for (var ii = 0; ii < 3; ii++){
-    carro.cardList[ii].createCard(cardContainer, ii);
-    activeCards.push([carro.cardList[ii], carro.cardList[ii].refId])
-}
+function prevCard(){
+    carro.prevCard();
+    leftCard[0].textContent = carro.getActiveCards()[0].title;
+    leftCard[1].textContent = carro.getActiveCards()[0].disc;
 
-cashedCards[3].createCard(cardContainer, cashedCards.refId);
+    centerCard[0].textContent = carro.getActiveCards()[1].title;
+    centerCard[1].textContent = carro.getActiveCards()[1].disc;
 
-function carUp() {
-    destruct =  activeCards[0][0];
-    destruct.destroyCard();
-    activeCards.pop();
-}
-
-function carDown() {
-    carro.setGroup('-');
+    rightCard[0].textContent = carro.getActiveCards()[2].title;
+    rightCard[1].textContent = carro.getActiveCards()[2].disc;
 }
