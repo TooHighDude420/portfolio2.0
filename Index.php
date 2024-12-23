@@ -18,9 +18,12 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
         <?php include "includes/navbar.inc.php" ?>
     </header>
     <main class="flex flex-col justify-around" id="main">
-        <?php include "includes/home.inc.php" ?>
-        <?php include "includes/programs.inc.php" ?>
-        <?php include "includes/contact.inc.php" ?>
+        <?php
+            include "includes/home.inc.php";
+            include "includes/programs.inc.php";
+            include "includes/experience.inc.php";
+            include "includes/contact.inc.php";
+        ?>
     </main>
     <script src="js/setMainSize.js"></script>
 </body>
