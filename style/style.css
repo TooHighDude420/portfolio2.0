@@ -2,7 +2,6 @@ section{
   margin-left: 5%;
 }
 
-
 .freckle-face-regular {
   font-family: "Freckle Face", system-ui;
   font-weight: 400;
@@ -17,11 +16,14 @@ section{
   min-height: 85vh;
 
   /* Create the parallax scrolling effect */
-  background-attachment: fixed;
+  background-attachment:fixed;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat:no-repeat;
+  background-size: cover; 
+
+
 }
+
 
 .ubuntu-regular {
   font-family: "Ubuntu", sans-serif;
