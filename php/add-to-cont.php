@@ -13,7 +13,7 @@ try {
     $stmt->bindParam("l_name", $l_name, PDO::PARAM_STR);
     $stmt->bindParam("u_message", $message, PDO::PARAM_STR);
     $stmt->execute();
-    header('Location:http://localhost/portfolio2.0/index.php');
+    header('Location:http://nataroajaouin.online/');
 } catch (PDOException $e) {
     print "please email the error to me at: nataro112@gmail.com";
     print "Error: ";

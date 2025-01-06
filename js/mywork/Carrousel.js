@@ -31,15 +31,13 @@ class Carroussel {
         this.activeCards[1] = this.activeCards[2]
         this.activeCards[2] = this.cardList.at(this.index);
         this.addToIndex();
-        console.log(this.index);
-    }
+        }
 
     prevCard() {
         this.activeCards[2] = this.activeCards[1];
         this.activeCards[1] = this.activeCards[0];
         this.removeFromIndex();
         this.activeCards[0] = this.cardList.at(this.index - 3);
-        console.log(this.index);
     }
 
     addToIndex() {

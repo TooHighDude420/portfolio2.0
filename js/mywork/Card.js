@@ -10,7 +10,7 @@ class Card {
         this.title = title;
         this.disc = disc;
         this.alt = img;
-        this.img = "http://localhost/portfolio2.0/img/programs/" + img;
+        this.img = "http://nataroajaouin.online/img/programs/" + img;
         this.index = index;
     }
 

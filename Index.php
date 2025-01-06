@@ -25,7 +25,6 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             include "includes/contact.inc.php";
         ?>
     </main>
-    <script src="js/setMainSize.js"></script>
 </body>
 
 </html>

@@ -28,7 +28,7 @@ xhttp.onreadystatechange = function () {
         go();
     }
 };
-xhttp.open("POST", "../Portfolio2.0/php/my-work/my-work.php");
+xhttp.open("POST", "../php/my-work/my-work.php");
 xhttp.send("q");
 
 function go() {
