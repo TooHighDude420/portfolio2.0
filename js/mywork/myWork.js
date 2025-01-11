@@ -34,7 +34,7 @@ xhttp.onreadystatechange = function () {
 };
 
 //reset before pushing (add ../ before!!!)
-xhttp.open("POST", "../php/my-work/my-work.php");
+xhttp.open("POST", "php/my-work/my-work.php");
 xhttp.send("q");
 
 function go() {
@@ -61,7 +61,9 @@ function setCards() {
         setModalContent([
             carro.getActiveCards()[0].title,
             carro.getActiveCards()[0].img,
-            carro.getActiveCards()[0].disc
+            carro.getActiveCards()[0].long_disc,
+            carro.getActiveCards()[0].down_path,
+            carro.getActiveCards()[0].file_name
         ]);
     }
 
@@ -73,7 +75,9 @@ function setCards() {
         setModalContent([
             carro.getActiveCards()[1].title,
             carro.getActiveCards()[1].img,
-            carro.getActiveCards()[1].disc
+            carro.getActiveCards()[1].long_disc,
+            carro.getActiveCards()[1].down_path,
+            carro.getActiveCards()[1].file_name
         ]);
     }
 
@@ -85,7 +89,9 @@ function setCards() {
         setModalContent([
             carro.getActiveCards()[2].title,
             carro.getActiveCards()[2].img,
-            carro.getActiveCards()[2].disc
+            carro.getActiveCards()[2].long_disc,
+            carro.getActiveCards()[2].down_path,
+            carro.getActiveCards()[2].file_name
         ]);
     }
 }

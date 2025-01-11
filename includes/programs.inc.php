@@ -6,19 +6,14 @@
 
         <div class="modal" id="modalTot">
             <div class="modal-header">
-                <p id="modalTitle"> Mastermind </p>
+                <p id="modalTitle"></p>
                 <span id="modalClose"> X </span>
             </div>
             <div class="modal-img" id="modalImage">
-                <img src="https://placehold.co/650x200" alt="placeholder">
+                <img class="max-h-[20vh] max-w-[100%]" src="" alt="">
             </div>
             <div class="modal-text" id="modalText">
-                <p>
-                    Hier komt tekst te staan over dit specefieke onderwerp
-                </p>
-            </div>
-            <div class="modal-download" id="modalDownload">
-                <a href="./img/home/left.svg" download="test_img_file">Download</a>
+                <p></p>
             </div>
         </div>
 

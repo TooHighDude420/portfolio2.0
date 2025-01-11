@@ -63,7 +63,7 @@ section {
 
 /* my work */
 .modal {
-  display: flex;
+  display: none;
   top: 10vh;
   background-color: grey;
   position: absolute;
