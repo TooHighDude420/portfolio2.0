@@ -1,3 +1,7 @@
+section {
+  margin-left: 5%;
+}
+
 .freckle-face-regular {
   font-family: "Freckle Face", system-ui;
   font-weight: 400;
@@ -16,7 +20,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+
 }
+
 
 .ubuntu-regular {
   font-family: "Ubuntu", sans-serif;
@@ -32,43 +39,59 @@
 
 /* text-styles */
 
-.titles{
+.titles {
   font-size: 75px;
   color: white;
   text-align: center;
   padding: 1.25rem;
 }
 
-.subtext{
+.subtext {
   font-size: 30px;
 }
 
-.small-titles{
+.small-titles {
   font-size: 20px;
   color: white;
   text-align: center;
 }
 
-.small-subtext{
+.small-subtext {
   font-size: 15px;
   color: white;
 }
 
 /* my work */
-.big-card{
-  max-width: 24rem; /* 384px */
-  padding: 1.5rem;
-  background-color: white;
-  border-width: 1px;
-  border-color: rgb(229 231 235);
-  border-radius: 0.5rem;
+.modal {
+  display: flex;
+  top: 10vh;
+  background-color: grey;
+  position: absolute;
+  height: 56vh;
+  width: 50%;
+  border-radius: 20px;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
-.small-card{
-  max-width: 15rem;
-  padding: 0.75rem;
-  background-color: white;
-  border-width: .5px;
-  border-color: rgb(229 231 235);
-  border-radius: 0.25rem;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+
+.modal-img {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-text{
+
+}
+
+.modal-download{
+  position: absolute;
+  bottom: 0;
+  left: 2%;
 }

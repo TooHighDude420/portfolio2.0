@@ -1,9 +1,9 @@
 <section>
-    <div class="absolute top-0 parallax w-[100%]"></div>
-    <img src="img/home/avatar.svg" alt="avatar" class="absolute top-[3%] left-[40.5%]">
-    <img src="img/home/right.svg" alt="right_background" class="absolute top-[13.2%]">
-    <img src="img/home/left.svg" alt="left_background" class="absolute top-[16.7%]">
-    <img src="img/home/arrow.svg" alt="arrow" class="absolute top-[54%] left-[50%]">
+    <div class="absolute top-0 parallax w-[94vw]"></div>
+    <img src="img/home/avatar.svg" alt="avatar" class="absolute top-[5%] left-[43%]">
+    <img src="img/home/right.svg" alt="right_background" class="absolute top-[16.7%] w-[94vw]">
+    <img src="img/home/left.svg" alt="left_background" class="absolute top-[20.3%] w-[94vw]">
+    <img src="img/home/arrow.svg" alt="arrow" class="absolute top-[56.3%] left-[52.5%]">
     <div class="flex flex-col justify-center items-center">
         <div class="text-cont flex flex-col justify-center items-center max-w-[80%]">
             <h1 class="ubuntu-regular titles">Mijn begin als programmeur</h1>

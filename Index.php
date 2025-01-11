@@ -14,13 +14,17 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
 </head>
 
 <body class="bg-[#314326]">
-    <header class="w-[6%] z-10 sticky top-0">
+    <header class="w-[6%] z-10 sticky top-0" id="header">
         <?php include "includes/navbar.inc.php" ?>
     </header>
-    <main class="flex flex-col justify-around">
-        <?php include "includes/home.inc.php" ?>
-        <?php include "includes/programs.inc.php" ?>
-        <?php include "includes/contact.inc.php" ?>
+    <!--test-->
+    <main class="flex flex-col justify-around" id="main">
+        <?php
+            include "includes/home.inc.php";
+            include "includes/programs.inc.php";
+            include "includes/experience.inc.php";
+            include "includes/contact.inc.php";
+        ?>
     </main>
 </body>
 
