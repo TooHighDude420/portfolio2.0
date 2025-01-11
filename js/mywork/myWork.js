@@ -2,23 +2,27 @@ var testArray;
 var carro;
 var xhttp;
 
-const leftCard = [
-    document.getElementById("leftTitle"),
-    document.getElementById("leftSubtext"),
-    document.getElementById("leftImage")
-];
+// making the cards into objects
+const leftCardTotal = {
+    Ent: document.getElementById("leftCardEnt"),
+    Title: document.getElementById("leftTitle"),
+    SubText: document.getElementById("leftSubtext"),
+    Image: document.getElementById("leftImage")
+}
 
-const centerCard = [
-    document.getElementById("centerTitle"),
-    document.getElementById("centerSubtext"),
-    document.getElementById("centerImage")
-];
+const centerCardTotal = {
+    Ent: document.getElementById("centerCardEnt"),
+    Title: document.getElementById("centerTitle"),
+    SubText: document.getElementById("centerSubtext"),
+    Image: document.getElementById("centerImage")
+}
 
-const rightCard = [
-    document.getElementById("rightTitle"),
-    document.getElementById("rightSubtext"),
-    document.getElementById("rightImage")
-];
+const rightCardTotal = {
+    Ent: document.getElementById("rightCardEnt"),
+    Title: document.getElementById("rightTitle"),
+    SubText: document.getElementById("rightSubtext"),
+    Image: document.getElementById("rightImage")
+}
 
 xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function () {
@@ -28,6 +32,8 @@ xhttp.onreadystatechange = function () {
         go();
     }
 };
+
+//reset before pushing (add ../ before!!!)
 xhttp.open("POST", "../php/my-work/my-work.php");
 xhttp.send("q");
 
@@ -46,19 +52,41 @@ function prevCard() {
     setCards();
 }
 
-function setCards(){
-    leftCard[0].textContent = carro.getActiveCards()[0].title;
-    leftCard[1].textContent = carro.getActiveCards()[0].disc;
-    leftCard[2].src = carro.getActiveCards()[0].img;
-    leftCard[2].alt = carro.getActiveCards()[0].alt;
+function setCards() {
+    leftCardTotal.Title.textContent = carro.getActiveCards()[0].title;
+    leftCardTotal.SubText.textContent = carro.getActiveCards()[0].disc;
+    leftCardTotal.Image.src = carro.getActiveCards()[0].img;
+    leftCardTotal.Image.alt = carro.getActiveCards()[0].alt;
+    leftCardTotal.Ent.onclick = function () {
+        setModalContent([
+            carro.getActiveCards()[0].title,
+            carro.getActiveCards()[0].img,
+            carro.getActiveCards()[0].disc
+        ]);
+    }
 
-    centerCard[0].textContent = carro.getActiveCards()[1].title;
-    centerCard[1].textContent = carro.getActiveCards()[1].disc;
-    centerCard[2].src = carro.getActiveCards()[1].img;
-    centerCard[2].alt = carro.getActiveCards()[1].alt;
+    centerCardTotal.Title.textContent = carro.getActiveCards()[1].title;
+    centerCardTotal.SubText.textContent = carro.getActiveCards()[1].disc;
+    centerCardTotal.Image.src = carro.getActiveCards()[1].img;
+    centerCardTotal.Image.alt = carro.getActiveCards()[1].alt;
+    centerCardTotal.Ent.onclick = function () {
+        setModalContent([
+            carro.getActiveCards()[1].title,
+            carro.getActiveCards()[1].img,
+            carro.getActiveCards()[1].disc
+        ]);
+    }
 
-    rightCard[0].textContent = carro.getActiveCards()[2].title;
-    rightCard[1].textContent = carro.getActiveCards()[2].disc;
-    rightCard[2].src = carro.getActiveCards()[2].img;
-    rightCard[2].alt = carro.getActiveCards()[2].alt;
+    rightCardTotal.Title.textContent = carro.getActiveCards()[2].title;
+    rightCardTotal.SubText.textContent = carro.getActiveCards()[2].disc;
+    rightCardTotal.Image.src = carro.getActiveCards()[2].img;
+    rightCardTotal.Image.alt = carro.getActiveCards()[2].alt;
+    rightCardTotal.Ent.onclick = function () {
+        setModalContent([
+            carro.getActiveCards()[2].title,
+            carro.getActiveCards()[2].img,
+            carro.getActiveCards()[2].disc
+        ]);
+    }
 }
+
