@@ -17,6 +17,7 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
     <header class="w-[6%] z-10 sticky top-0" id="header">
         <?php include "includes/navbar.inc.php" ?>
     </header>
+    <!--test-->
     <main class="flex flex-col justify-around" id="main">
         <?php
             include "includes/home.inc.php";
