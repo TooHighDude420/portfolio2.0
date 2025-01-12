@@ -61,6 +61,11 @@ section {
   color: white;
 }
 
+.active{
+  background-color: #767676;
+  border-color: black  !important;
+}
+
 /* my work */
 .modal {
   display: none;
