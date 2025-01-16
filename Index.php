@@ -3,7 +3,6 @@
 
 <?php
 isset($_SESSION) ?: session_start();
-isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
 ?>
 
 <head>
@@ -14,11 +13,14 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
 </head>
 
 <body class="bg-[#314326]">
+    <!-- navbar -->
     <header class="w-[6%] z-10 sticky top-0" id="header">
         <?php include "includes/navbar.inc.php" ?>
     </header>
-    <!--test-->
+
     <main class="flex flex-col justify-around" id="main">
+
+        <!-- home -->
         <section id="home">
             <div class="absolute top-0 parallax w-[94vw]"></div>
             <img src="img/home/avatar.svg" alt="avatar" class="absolute top-[5%] left-[43%]">
@@ -27,41 +29,26 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             <img src="img/home/arrow.svg" alt="arrow" class="absolute top-[56.3%] left-[52.5%]">
             <div class="flex flex-col justify-center items-center">
                 <div class="text-cont flex flex-col justify-center items-center max-w-[80%]">
-                    <h1 class="ubuntu-regular titles">Mijn begin als programmeur</h1>
-                    <div class="lato-regular subtext">
-                        <p>
-                            Vroeger toen ik een jaar of 10 was, had ik een video gezien op YouTube waar iemand een
-                            CMD-programma
-                            had
-                            gemaakt dat op het iconische Matrix patroon lijkt. Helemaal verwonderd had ik de code
-                            gekopieerd om
-                            het
-                            zelf
-                            uit te proberen, ik snapte er natuurlijk nog niks van. Maar het heeft er wel voor gezorgd
-                            dat ik
-                            geïnteresseerd ben geworden in programmeren.
-                        </p>
-                        <br>
-                        <p>
-                            Nadat ik het succesvol had nagedaan ben ik zelf gaan experimenteren met de dingen die ik kon
-                            doen,
-                            wat
-                            er
-                            uiteindelijk voor heeft gezorgd dat ik mijn eerste programma heb gemaakt. Een keuzemenu wat
-                            verschillende
-                            programma’s voor je kon openen zoals notepad en internetbrowser, aan het begin werd je naam
-                            gevraagd
-                            en
-                            er
-                            werd dan laten zien “hallo nataro”.
-
+                    <h1 class="ubuntu-regular titles">Welkom op mijn portfolio!</h1>
+                    <div class="flex lato-regular subtext ">
+                        <p class="h-[75vh] align-middle items-center content-center">
+                            Ik ben Nataro Ajaouin, een software developer die sinds 2018 professioneel werkt in de
+                            tech-industrie. Mijn interesse in programmeren begon op jonge leeftijd, toen ik gefascineerd
+                            raakte door een simpel CMD-programma dat het Matrix-patroon nabootste. Sindsdien ben ik
+                            blijven leren en groeien als developer.
+                            <br>
+                            Ik heb ervaring met het ontwikkelen van games in Unity en het bouwen van websites met PHP,
+                            JavaScript, SQL, CSS en HTML. Mijn projecten variëren van interactieve webapplicaties tot
+                            creatieve games.
+                            <br>
+                            Op deze pagina kun je enkele van mijn werk zien. Bedankt voor je bezoek!
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-
+        <!-- mywork -->
         <section id="mywork" class="h-[100vh]">
             <div class="relative flex-col justify-center items-center flex">
                 <div class="titles ubuntu-regular">
@@ -81,36 +68,36 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                     </div>
                 </div>
 
-                <div class="flex justify-center items-center p-5 gap-10" id="cardContainer">
-                    <button onclick="nextCard()">
-                        < </button>
+                <div class="flex justify-center items-center p-5 gap-10 h-[80vh]" id="cardContainer">
+                    <button onclick="nextCard()" class="size-32"> <img src="img/mywork/left_arrow.svg" alt="left_arrow">
+                    </button>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="leftCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="leftImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="leftTitle">
-                                </h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="leftSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="leftCardEnt">
+                        <img class="w-[30vw] h-[20Vh]" src="" alt="" id="leftImage">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" id="leftTitle">
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="leftSubtext"></p>
+                    </div>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="centerCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="centerImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="centerTitle"></h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="centerSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="centerCardEnt">
+                        <img class="w-[30vw] h-[20Vh]" src="" alt="" id="centerImage">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                            id="centerTitle"></h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="centerSubtext"></p>
+                    </div>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="rightCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="rightImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="rightTitle"></h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="rightSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="rightCardEnt">
+                        <img class="w-[30vw] h-[20Vh]" src="" alt="" id="rightImage">
+                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                            id="rightTitle"></h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="rightSubtext"></p>
+                    </div>
 
-                            <button onclick="prevCard()"> > </button>
+                    <button onclick="prevCard()" class="size-32"> <img src="img/mywork/right_arrow.svg"
+                            alt="right_arrow"> </button>
                 </div>
             </div>
 
@@ -120,6 +107,7 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             <script src="js/mywork/myWork.js"></script>
         </section>
 
+        <!-- experiance -->
         <section id="experiance">
             <div class="relative flex-col justify-center items-center flex">
                 <div class="titles ubuntu-regular">
@@ -129,13 +117,17 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                     <div class="flex justify-between items-center flex-wrap">
                         <img class="size-24" src="img/experience/cs.png" alt="c#">
                         <p>
-                            Hier komt mijn ervaring met C#
+                            Ik ben in 2018 begonnen op het rijnijssel met aplicatie ontwikkeing en daar heb ik heel snel
+                            wpf gebruikt en meerdere programmas gemaakt met c#. <br> ik heb ook al zelf een game gemaakt
+                            in unity.
                         </p>
                     </div>
 
                     <div class="flex justify-between items-center flex-wrap">
                         <p>
-                            Hier komt mijn ervaring met CSS
+                            Ik heb al meerdere websites gemaakt met alleen css en dit portfolio heb ik ook met Tailwind
+                            css gemaakt. <br> Ik zou niet zeggen dat ik het heel goed kan ik ken de basics en dat vind
+                            ik genoeg.
                         </p>
                         <img class="size-24" src="img/experience/css.png" alt="css">
                     </div>
@@ -171,7 +163,7 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             </div>
         </section>
 
-        <!-- Main modal -->
+        <!-- Contact  -->
         <section id="contact" class="h-[100vh]">
             <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
                 class="flex-col justify-center items-center flex">
@@ -179,14 +171,11 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                     <h1> Contact </h1>
                 </div>
                 <div class="p-5 w-full max-w-2xl">
-                    <!-- Modal content -->
                     <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <!-- Modal header -->
                         <div
                             class="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                             <h1 class="text-white">Laat een bricht achter</h1>
                         </div>
-                        <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
                             <form class="max-w-md mx-auto" method="POST" action="php/add-to-cont.php">
                                 <div class="relative z-0 w-full mb-5 group">
@@ -228,7 +217,6 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                                 <button type="submit"
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                             </form>
-
                         </div>
                     </div>
                 </div>

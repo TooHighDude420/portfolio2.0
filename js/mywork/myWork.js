@@ -34,7 +34,7 @@ xhttp.onreadystatechange = function () {
 };
 
 //reset before pushing (add ../ before!!!)
-xhttp.open("POST", "php/my-work/my-work.php");
+xhttp.open("POST", "../php/my-work/my-work.php");
 xhttp.send("q");
 
 function go() {
