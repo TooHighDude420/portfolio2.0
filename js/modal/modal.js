@@ -12,13 +12,17 @@ var modalTotal = {
     modalContent: text
 }
 
-modalTotal.closeBtn.onclick = function(){
+function hideModal(){
     modalTotal.ent.style.display = "none";
 }
 
+modalTotal.closeBtn.addEventListener("click", hideModal);
+
+
+
 function setModalContent(values){
-    modalTotal.ent.style.display = "flex"
+    modalTotal.ent.style.display = "flex";
     modalTotal.modalTitle.textContent = values[0];
     modalTotal.modalImage.src = values[1];
-    modalTotal.modalContent.textContent = values[2];
+    modalTotal.modalContent.innerHTML = values[2];
 }

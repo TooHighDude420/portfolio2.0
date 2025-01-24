@@ -15,10 +15,5 @@ try {
     $stmt->execute();
     header('Location:http://nataroajaouin.online/');
 } catch (PDOException $e) {
-    print "please email the error to me at: nataro112@gmail.com";
-    print "Error: ";
-    print "<br>";
     print $e;
-    print "<br>";
-    print "<button onclick='../index.php'>back</button>";
 }

@@ -3,7 +3,6 @@
 
 <?php
 isset($_SESSION) ?: session_start();
-isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
 ?>
 
 <head>
@@ -14,11 +13,14 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
 </head>
 
 <body class="bg-[#314326]">
+    <!-- navbar -->
     <header class="w-[6%] z-10 sticky top-0" id="header">
         <?php include "includes/navbar.inc.php" ?>
     </header>
-    <!--test-->
+
     <main class="flex flex-col justify-around" id="main">
+
+        <!-- home -->
         <section id="home">
             <div class="absolute top-0 parallax w-[94vw]"></div>
             <img src="img/home/avatar.svg" alt="avatar" class="absolute top-[5%] left-[43%]">
@@ -27,90 +29,88 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             <img src="img/home/arrow.svg" alt="arrow" class="absolute top-[56.3%] left-[52.5%]">
             <div class="flex flex-col justify-center items-center">
                 <div class="text-cont flex flex-col justify-center items-center max-w-[80%]">
-                    <h1 class="ubuntu-regular titles">Mijn begin als programmeur</h1>
-                    <div class="lato-regular subtext">
-                        <p>
-                            Vroeger toen ik een jaar of 10 was, had ik een video gezien op YouTube waar iemand een
-                            CMD-programma
-                            had
-                            gemaakt dat op het iconische Matrix patroon lijkt. Helemaal verwonderd had ik de code
-                            gekopieerd om
-                            het
-                            zelf
-                            uit te proberen, ik snapte er natuurlijk nog niks van. Maar het heeft er wel voor gezorgd
-                            dat ik
-                            geïnteresseerd ben geworden in programmeren.
-                        </p>
-                        <br>
-                        <p>
-                            Nadat ik het succesvol had nagedaan ben ik zelf gaan experimenteren met de dingen die ik kon
-                            doen,
-                            wat
-                            er
-                            uiteindelijk voor heeft gezorgd dat ik mijn eerste programma heb gemaakt. Een keuzemenu wat
-                            verschillende
-                            programma’s voor je kon openen zoals notepad en internetbrowser, aan het begin werd je naam
-                            gevraagd
-                            en
-                            er
-                            werd dan laten zien “hallo nataro”.
-
-                        </p>
+                    <h1 class="ubuntu-regular titles">Welkom op mijn portfolio!</h1>
+                    <div class="flex lato-regular subtext ">
+                        <div class="h-[75vh] align-middle items-center content-center text-white">
+                            <p>
+                                Ik ben Nataro Ajaouin, een hopelijk toekomstig software developer die sinds 2018 actief
+                                werkt aan zijn skills in de
+                                tech-industrie. Mijn interesse in programmeren begon op jonge leeftijd toen ik
+                                gefascineerd
+                                raakte door een simpel CMD-programma dat het Matrix-patroon nabootste. Sindsdien ben ik
+                                blijven leren en groeien als developer.
+                            </p>
+                            <br>
+                            <p>
+                                Ik heb ervaring met het ontwikkelen van games in Unity en het bouwen van websites met
+                                PHP,
+                                JavaScript, SQL, CSS en HTML. Mijn projecten variëren van interactieve webapplicaties
+                                tot
+                                creatieve games.
+                            </p>
+                            <br>
+                            <p>
+                                Op deze pagina kun je enkele van mijn werk zien. Bedankt voor je bezoek!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-
+        <!-- mywork -->
         <section id="mywork" class="h-[100vh]">
             <div class="relative flex-col justify-center items-center flex">
                 <div class="titles ubuntu-regular">
                     <h1> Mijn werk </h1>
                 </div>
 
-                <div class="modal" id="modalTot">
+                <div class="modal dark:bg-gray-800 dark:border-gray-700 dark:text-white" id="modalTot">
                     <div class="modal-header">
-                        <p id="modalTitle"></p>
-                        <span id="modalClose"> X </span>
+                        <b class="modal-title" id="modalTitle"></b>
+                        <span class="modal-button" id="modalClose">
+                            X
+                        </span>
                     </div>
                     <div class="modal-img" id="modalImage">
-                        <img class="max-h-[20vh] max-w-[100%]" src="" alt="">
+                        <img class="max-h-[30vh] max-w-[100%]" src="" alt="">
                     </div>
                     <div class="modal-text" id="modalText">
                         <p></p>
                     </div>
                 </div>
 
-                <div class="flex justify-center items-center p-5 gap-10" id="cardContainer">
-                    <button onclick="nextCard()">
-                        < </button>
+                <div class="flex justify-center items-center p-5 gap-10 h-[80vh]" id="cardContainer">
+                    <button onclick="nextCard()" class="size-32"> <img src="img/mywork/left_arrow.svg" alt="left_arrow">
+                    </button>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="leftCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="leftImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="leftTitle">
-                                </h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="leftSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="leftCardEnt">
+                        <img class="w-[30vw] h-[20Vh] rounded-lg" src="" alt="" id="leftImage">
+                        <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white"
+                            id="leftTitle">
+                        </h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="leftSubtext"></p>
+                    </div>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="centerCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="centerImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="centerTitle"></h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="centerSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="centerCardEnt">
+                        <img class="w-[30vw] rounded-lg h-[20Vh]" src="" alt="" id="centerImage">
+                        <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white"
+                            id="centerTitle"></h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="centerSubtext"></p>
+                    </div>
 
-                            <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-                                id="rightCardEnt">
-                                <img class="w-[30vw] h-[20Vh]" src="" alt="" id="rightImage">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-                                    id="rightTitle"></h5>
-                                <p class="font-normal text-gray-700 dark:text-gray-400" id="rightSubtext"></p>
-                            </div>
+                    <div class="block h-[40vh] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+                        id="rightCardEnt">
+                        <img class="w-[30vw] rounded-lg h-[20Vh]" src="" alt="" id="rightImage">
+                        <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white"
+                            id="rightTitle"></h5>
+                        <p class="font-normal text-gray-700 dark:text-gray-400" id="rightSubtext"></p>
+                    </div>
 
-                            <button onclick="prevCard()"> > </button>
+                    <button onclick="prevCard()" class="size-32"> <img src="img/mywork/right_arrow.svg"
+                            alt="right_arrow"> </button>
                 </div>
             </div>
 
@@ -120,58 +120,108 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
             <script src="js/mywork/myWork.js"></script>
         </section>
 
+        <!-- experiance -->
         <section id="experiance">
             <div class="relative flex-col justify-center items-center flex">
                 <div class="titles ubuntu-regular">
                     <h1>Experiences</h1>
                 </div>
-                <div class="flex flex-col">
-                    <div class="flex justify-between items-center flex-wrap">
-                        <img class="size-24" src="img/experience/cs.png" alt="c#">
-                        <p>
-                            Hier komt mijn ervaring met C#
-                        </p>
+
+                <div class="flex">
+                    <div class="flex flex-col justify-center items-center p-5 gap-10">
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/cs.png" alt="c#">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                C#
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400 dark:text-white text-white">
+
+                            <ul class="list dark:text-white text-white ">
+                                <li>Themed-2048</li>
+                            </ul>
+                            </p>
+                        </div>
+
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/css.png" alt="css">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                CSS
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">
+                            <ul class="list dark:text-white text-white ">
+                                <li>PinkGoose</li>
+                                <li>portfolio</li>
+                                <li>Cafetaria Kribbe</li>
+                            </ul>
+                            </p>
+                        </div>
+
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/html.png" alt="html">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                HTML
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">
+                            <ul class="list dark:text-white text-white ">
+                                <li>PinkGoose</li>
+                                <li>portfolio</li>
+                                <li>Cafetaria Kribbe</li>
+                            </ul>
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="flex justify-between items-center flex-wrap">
-                        <p>
-                            Hier komt mijn ervaring met CSS
-                        </p>
-                        <img class="size-24" src="img/experience/css.png" alt="css">
-                    </div>
+                    <div class="flex flex-col justify-center items-center p-5 gap-10">
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/java.png" alt="java">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                Java
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">
+                            <ul class="list dark:text-white text-white ">
+                                <li>Mastermind</li>
+                                <li>Mastermind2.0</li>
+                            </ul>
+                            </p>
+                        </div>
 
-                    <div class="flex justify-between items-center flex-wrap">
-                        <img class="size-24" src="img/experience/html.png" alt="html">
-                        <p>
-                            Hier komt mijn ervaring met HTML
-                        </p>
-                    </div>
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/javascript.png" alt="javascript">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                JavaScript
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">
+                            <ul class="list dark:text-white text-white ">
+                                <li>portfolio</li>
+                                <li>Cafetaria Kribbe</li>
+                            </ul>
+                            </p>
+                        </div>
 
-                    <div class="flex justify-between items-center flex-wrap">
-                        <p>
-                            Hier komt mijn ervaring met Java
-                        </p>
-                        <img class="size-24" src="img/experience/java.png" alt="java">
-                    </div>
-
-                    <div class="flex justify-between items-center flex-wrap">
-                        <img class="size-24" src="img/experience/javascript.png" alt="javascript">
-                        <p>
-                            Hier komt mijn ervaring met JavaScript
-                        </p>
-                    </div>
-
-                    <div class="flex justify-betweem items-center flex-wrap">
-                        <p>
-                            Hier komt mijn ervaring met PHP
-                        </p>
-                        <img class="size-24" src="img/experience/php.png" alt="php">
+                        <div
+                            class="block flex flex-col items-center h-[40vh] max-w-sm p-6 size-64 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                            <img class="size-24" src="img/experience/php.png" alt="php">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                PHP
+                            </h5>
+                            <p class="font-normal text-gray-700 dark:text-gray-400">
+                            <ul class="list dark:text-white text-white ">
+                                <li>portfolio</li>
+                                <li>Cafetaria Kribbe</li>
+                            </ul>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Main modal -->
+        <!-- Contact  -->
         <section id="contact" class="h-[100vh]">
             <div id="static-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
                 class="flex-col justify-center items-center flex">
@@ -179,14 +229,11 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                     <h1> Contact </h1>
                 </div>
                 <div class="p-5 w-full max-w-2xl">
-                    <!-- Modal content -->
-                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                        <!-- Modal header -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div
                             class="flex items-center justify-center p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                             <h1 class="text-white">Laat een bricht achter</h1>
                         </div>
-                        <!-- Modal body -->
                         <div class="p-4 md:p-5 space-y-4">
                             <form class="max-w-md mx-auto" method="POST" action="php/add-to-cont.php">
                                 <div class="relative z-0 w-full mb-5 group">
@@ -195,7 +242,7 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                                         placeholder=" " required>
                                     <label for="floating_email"
                                         class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
-                                        address</label>
+                                        adres</label>
                                 </div>
                                 <div class="grid md:grid-cols-2 md:gap-6">
                                     <div class="relative z-0 w-full mb-5 group">
@@ -203,32 +250,29 @@ isset($_GET['page']) ? $page = $_GET['page'] : $page = 'home';
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " required>
                                         <label for="floating_first_name"
-                                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
-                                            name</label>
+                                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Voor naam</label>
                                     </div>
                                     <div class="relative z-0 w-full mb-5 group">
                                         <input type="text" name="l_name" id="floating_last_name"
                                             class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                             placeholder=" " required>
                                         <label for="floating_last_name"
-                                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
-                                            name</label>
+                                            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Achter
+                                            naam</label>
                                     </div>
                                 </div>
                                 <div class="">
                                     <div class="relative w-[80%] z-0 w-full mb-5 group">
                                         <label for="message"
-                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
-                                            message</label>
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jou bericht</label>
                                         <textarea name="message" id="message" rows="4"
-                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="Write your thoughts here..."></textarea>
+                                            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                            placeholder=""></textarea>
                                     </div>
                                 </div>
                                 <button type="submit"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Verzend</button>
                             </form>
-
                         </div>
                     </div>
                 </div>

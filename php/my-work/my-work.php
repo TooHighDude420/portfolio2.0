@@ -10,7 +10,6 @@ try {
     $stmt->execute();
     $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($res);
-
 } catch (\Throwable $th) {
     fwrite($myfile, "error: " + $th + date("d/m/y") + "" + date("H:i:s"));
 }
