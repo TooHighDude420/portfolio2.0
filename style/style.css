@@ -50,6 +50,12 @@ section {
   padding: 1.25rem;
 }
 
+.titles-details {
+  font-size: 75px;
+  color: white;
+  text-align: center;
+}
+
 .subtext {
   font-size: 30px;
 }
@@ -73,21 +79,43 @@ section {
 /* my work */
 .modal {
   display: none;
-  top: 10vh;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black !important;
+  top: 18vh;
   background-color: grey;
   position: absolute;
-  height: 56vh;
-  width: 50%;
+  height: fit-content;
+  width: 75%;
   border-radius: 20px;
   flex-direction: column;
   align-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 3%;
+  height: 5vh;
+  width: 100%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-width: 3px;
+  border-color: black;
+}
+
+.modal-title{
+  padding-left: 2%;
+  font-size: 20px;
+}
+
+.modal-button{
+  padding-right: 2%;
+  font-size: 20px;
 }
 
 .modal-img {
@@ -96,11 +124,19 @@ section {
 }
 
 .modal-text{
-
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 90%;
+  font-size: large;
 }
 
-.modal-download{
-  position: absolute;
-  bottom: 0;
-  left: 2%;
+/* list style */
+.list{
+  list-style: square;
+  list-style-type: square;
+}
+
+/* details */
+.text-holder{
+  padding: 10px;
 }
